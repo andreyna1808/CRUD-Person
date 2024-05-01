@@ -34,6 +34,12 @@ class PersonService {
         return persons
     }
 
+    fun create(person: PersonModel) = person
+
+    fun update(person: PersonModel) = person
+
+    fun delete(id: Long): String = "Deletado com sucesso!"
+
     private fun mockPersonModel(i: Int): PersonModel {
         val person = PersonModel()
         person.id = counter.incrementAndGet()
