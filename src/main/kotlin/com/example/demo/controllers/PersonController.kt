@@ -1,7 +1,7 @@
 package com.example.demo.controllers
 
 import com.example.demo.models.PersonModel
-import com.example.demo.servies.PersonService
+import com.example.demo.services.PersonService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.PathVariable
@@ -18,8 +18,13 @@ class PersonController {
     // var service: PersonService = PersonService(), faz o mesmo que a linha acima, porém o autowired faz o tratamento necessário
 
     @RequestMapping(value = ["{id}"], method = [RequestMethod.GET], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getPersonById(@PathVariable(value = "id") id: Long): PersonModel {
+    fun getById(@PathVariable(value = "id") id: Long): PersonModel {
         return service.findById(id)
+    }
+
+    @RequestMapping(method = [RequestMethod.GET], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun getAll(): List<PersonModel> {
+        return service.findAll()
     }
 
 }
