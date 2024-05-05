@@ -40,6 +40,12 @@ spring:
       show-sql: false
 ```
 
+
+### Swagger do projeto
+```bash
+url: http://localhost:8080/swagger-ui/index.html
+```
+
 ##
 
 [![Habilidades back-end](https://skillicons.dev/icons?i=kotlin,spring,)](https://skillicons.dev)

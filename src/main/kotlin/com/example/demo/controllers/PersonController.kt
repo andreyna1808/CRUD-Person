@@ -2,6 +2,7 @@ package com.example.demo.controllers
 
 import com.example.demo.models.PersonModel
 import com.example.demo.services.PersonService
+import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/v1/person")
+@Tag(name = "People", description = "Endpoints for managing People")
 class PersonController {
 
     @Autowired
